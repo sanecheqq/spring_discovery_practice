@@ -1,0 +1,11 @@
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_HOST:http://localhost:8082/eureka/}
+  instance:
+    instance-id: backend_pinger
+spring:
+  application:
+    name: backend_pinger

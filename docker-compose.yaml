@@ -1,0 +1,19 @@
+services:
+  eureka_server:
+    image: eureka_server
+    ports:
+      - 8082:8082
+    environment:
+      - EUREKA_HOST=http://130e6412b66c:8082/eureka/
+  app1:
+    image: app1
+    ports:
+      - 8080:8080
+    environment:
+      - EUREKA_HOST=http://130e6412b66c:8082/eureka/
+  ping_app1:
+    image: ping_app1
+    ports:
+      - 8081:8081
+    environment:
+      - EUREKA_HOST=http://130e6412b66c:8082/eureka/
